@@ -119,7 +119,13 @@ input:focus {
     padding: 5px 10px;
     background: #545454;
     cursor: pointer;
+    display: none;
 }
+#encriptar .copiar.visible,
+#desencriptar .copiar.visible {
+    display: block;
+}
+
 #encriptar .copiar.activo,
 #desencriptar .copiar.activo {
     background: #397843;
@@ -138,7 +144,7 @@ input:focus {
     font-weight: bold;
     flex: 1;
     text-align: left;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 1.1px;
     word-break: break-word;
     align-self: center;
