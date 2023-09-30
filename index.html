@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="javascript.js" type="text/javascript"></script>
+    <title>Encriptación y Desencriptación</title>
+</head>
+
+<body>
+    <div id="encriptar">
+        <div class="titulo">Encriptar</div>
+
+        <div class="wrapper-inputs">
+            <input type="text" id="palabraEncriptar" autocomplete="off" placeholder="Palabra a encriptar">
+            <input type="password" id="claveEncriptar" autocomplete="off" placeholder="Clave">
+            <button onclick="encriptar()">Encriptar</button>
+        </div>
+
+        <div class="wrapper-resultado">
+            <span>Resultado: </span>
+            <span id="resultadoEncriptar">...</span>
+        </div>
+    </div>
+
+    <div id="desencriptar">
+        <div class="titulo">Desencriptar</div>
+
+        <div class="wrapper-inputs">
+            <input type="text" id="palabraDesencriptar" autocomplete="off" placeholder="Palabra encriptada">
+            <input type="password" id="claveDesencriptar" autocomplete="off" placeholder="Clave">
+            <button onclick="desencriptar()">Desencriptar</button>
+        </div>
+
+        <div class="wrapper-resultado">
+            <span>Resultado: </span>
+            <span id="resultadoDesencriptar">...</span>
+        </div>
+    </div>
+
+</body>
+
+</html>

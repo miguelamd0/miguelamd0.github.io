@@ -1,0 +1,102 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px 25px 25px 25px;
+    box-sizing: border-box;
+    background: #2d2d2d;
+}
+body * {
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: rgb(163, 163, 163);
+}
+input:focus {
+    outline: none;
+}
+
+
+#encriptar,
+#desencriptar {
+    background: #3a3a3a;
+    padding: 15px 20px 20px 20px;
+    margin-bottom: 20px;
+}
+
+#encriptar .titulo,
+#desencriptar .titulo {
+    color: #e6e6e6;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+#encriptar .wrapper-inputs,
+#desencriptar .wrapper-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#encriptar input,
+#desencriptar input {
+    padding: 8px 6px;
+    border-radius: 3px;
+    border: 0;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+
+#encriptar button,
+#desencriptar button {
+    border: 0;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 300px;
+}
+
+#encriptar button {
+    background: #5b5b99;
+}
+
+#desencriptar button {
+    background: #5b998a;
+}
+
+#encriptar .wrapper-resultado,
+#desencriptar .wrapper-resultado {
+    background: #454545;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 80px;
+}
+
+#encriptar .wrapper-resultado span:first-child,
+#desencriptar .wrapper-resultado span:first-child {
+    color: #e6e6e6;
+    font-size: 14px;
+}
+
+#encriptar .wrapper-resultado span:last-child,
+#desencriptar .wrapper-resultado span:last-child {
+    color: white;
+    font-weight: bold;
+    flex: 1;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 1.1px;
+}
