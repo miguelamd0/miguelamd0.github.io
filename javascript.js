@@ -78,3 +78,13 @@ function desencriptar() {
         document.querySelector('#resultadoDesencriptar').innerHTML = '<span style="color: #ff9696; font-size: 18px;">Hay inputs vacíos</span>';
     }
 }
+
+function copiarTexto(id, event) {
+    let input = document.getElementById(id);
+    let text = input.innerHTML;
+    navigator.clipboard.writeText(text);
+
+    let target = event.currentTarget;
+    target.classList.add("activo");
+    setTimeout(() => target.classList.remove("activo"), 1000);
+}

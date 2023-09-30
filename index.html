@@ -17,7 +17,7 @@
         <div class="wrapper-inputs">
             <input type="text" id="palabraEncriptar" autocomplete="off" placeholder="Palabra a encriptar">
             <input type="text" id="palabraEncriptarRepite" autocomplete="off" placeholder="Repite la palabra a encriptar">
-            
+
             <input type="password" id="claveEncriptar" autocomplete="off" placeholder="Clave">
             <input type="password" id="claveEncriptarRepite" autocomplete="off" placeholder="Repite la clave">
             <button onclick="encriptar()">Encriptar</button>
@@ -26,6 +26,8 @@
         <div class="wrapper-resultado">
             <span>Resultado: </span>
             <span id="resultadoEncriptar">...</span>
+
+            <div class="copiar" onclick="copiarTexto('resultadoEncriptar', event)">Copiar</div>
         </div>
     </div>
 
@@ -45,6 +47,8 @@
         <div class="wrapper-resultado">
             <span>Resultado: </span>
             <span id="resultadoDesencriptar">...</span>
+
+            <div class="copiar" onclick="copiarTexto('resultadoDesencriptar', event)">Copiar</div>
         </div>
     </div>
 
