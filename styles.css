@@ -96,7 +96,7 @@ input:focus {
 #desencriptar .wrapper-resultado {
     background: #454545;
     margin-top: 30px;
-    padding: 20px;
+    padding: 10px 13px;
     min-height: 80px;
     display: flex;
     flex-direction: column;
@@ -106,7 +106,7 @@ input:focus {
 #desencriptar .wrapper-resultado span:first-child {
     color: #e6e6e6;
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 #encriptar .wrapper-resultado span:last-child,
