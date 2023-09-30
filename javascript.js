@@ -13,11 +13,19 @@ function generarTablaConversion(claveSecreta) {
 
 function encriptar() {
     let palabraInput = document.getElementById("palabraEncriptar").value.trim();
+    let palabraInputRepite = document.getElementById("palabraEncriptarRepite").value.trim();
+
     let claveInput = document.getElementById("claveEncriptar").value.trim();
     let claveInputRepite = document.getElementById("claveEncriptarRepite").value.trim();
 
-    if (palabraInput.length > 0 && claveInput.length && claveInputRepite.length) {
-        if (claveInput == claveInputRepite) {
+    if (palabraInput.length > 0 && palabraInputRepite.length > 0 && claveInput.length && claveInputRepite.length) {
+        if (palabraInput != palabraInputRepite) {
+            document.querySelector('#resultadoEncriptar').innerHTML = '<span style="color: #ff9696; font-size: 18px;">El texto a encriptar no coincide</span>';
+
+        } else if (claveInput != claveInputRepite) {
+            document.querySelector('#resultadoEncriptar').innerHTML = '<span style="color: #ff9696; font-size: 18px;">La clave no coincide</span>';
+
+        } else if (palabraInput == palabraInputRepite && claveInput == claveInputRepite) {
             let tablaConversion = generarTablaConversion(claveInput);
             let resultado = '';
             for (let i = 0; i < palabraInput.length; i++) {
@@ -30,20 +38,28 @@ function encriptar() {
                 }
             }
             document.querySelector('#resultadoEncriptar').innerHTML = resultado;
-
-        } else {
-            document.querySelector('#resultadoEncriptar').innerHTML = '<span style="color: #ff9696">La clave no coincide</span>';
         }
+
+    } else {
+        document.querySelector('#resultadoEncriptar').innerHTML = '<span style="color: #ff9696; font-size: 20px;">Hay inputs vacíos</span>';
     }
 }
 
 function desencriptar() {
     let palabraEncriptada = document.getElementById("palabraDesencriptar").value.trim();
+    let palabraEncriptadaRepite = document.getElementById("palabraDesencriptarRepite").value.trim();
+
     let claveInput = document.getElementById("claveDesencriptar").value.trim();
     let claveInputRepite = document.getElementById("claveDesencriptarRepite").value.trim();
 
-    if (palabraEncriptada.length > 0 && claveInput.length && claveInputRepite.length) {
-        if (claveInput == claveInputRepite) {
+    if (palabraEncriptada.length > 0 && palabraEncriptadaRepite.length > 0 && claveInput.length && claveInputRepite.length) {
+        if (palabraEncriptada != palabraEncriptadaRepite) {
+            document.querySelector('#resultadoDesencriptar').innerHTML = '<span style="color: #ff9696; font-size: 18px;">El texto encriptado no coincide</span>';
+
+        } else if (claveInput != claveInputRepite) {
+            document.querySelector('#resultadoDesencriptar').innerHTML = '<span style="color: #ff9696; font-size: 18px;">La clave no coincide</span>';
+
+        } else if (palabraEncriptada == palabraEncriptadaRepite && claveInput == claveInputRepite) {
             let tablaConversion = generarTablaConversion(claveInput);
             let resultado = '';
             for (let i = 0; i < palabraEncriptada.length; i++) {
@@ -56,9 +72,9 @@ function desencriptar() {
                 }
             }
             document.querySelector('#resultadoDesencriptar').innerHTML = resultado;
-
-        } else {
-            document.querySelector('#resultadoDesencriptar').innerHTML = '<span style="color: #ff9696">La clave no coincide</span>';
         }
+
+    } else {
+        document.querySelector('#resultadoDesencriptar').innerHTML = '<span style="color: #ff9696; font-size: 18px;">Hay inputs vacíos</span>';
     }
 }

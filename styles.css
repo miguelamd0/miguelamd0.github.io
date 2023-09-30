@@ -42,14 +42,14 @@ input:focus {
 #encriptar .titulo,
 #desencriptar .titulo {
     color: #e6e6e6;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 #encriptar .pista,
 #desencriptar .pista {
-    color: #b4b4b4;
+    color: #ebd1d1;
     position: absolute;
     top: 7px;
     right: 7px;
@@ -73,6 +73,11 @@ input:focus {
     max-width: 300px;
 }
 
+#encriptar #palabraEncriptarRepite,
+#desencriptar #palabraDesencriptarRepite {
+    margin-bottom: 25px;
+}
+
 #encriptar button,
 #desencriptar button {
     border: 0;
@@ -82,6 +87,7 @@ input:focus {
     border-radius: 3px;
     width: 100%;
     max-width: 300px;
+    margin-top: 10px;
 }
 
 #encriptar button {
