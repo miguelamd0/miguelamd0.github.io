@@ -71,7 +71,7 @@ function encriptar() {
                 }
             }
             let cantidad = calcularResto(palabraInput, claveInput);
-            resultado = rotarTexto(resultado, cantidad);   
+            resultado = rotarTexto(resultado, cantidad);
 
             document.querySelector('#resultadoEncriptar').innerHTML = resultado;
             document.querySelector('#encriptar .copiar').classList.add("visible");
@@ -100,7 +100,7 @@ function desencriptar() {
 
         } else if (palabraEncriptada == palabraEncriptadaRepite && claveInput == claveInputRepite) {
             let cantidad = calcularResto(palabraEncriptada, claveInput);
-            palabraEncriptada = rotarTextoInverso(palabraEncriptada, cantidad); 
+            palabraEncriptada = rotarTextoInverso(palabraEncriptada, cantidad);
 
             let tablaConversion = generarTablaConversion(claveInput);
             let resultado = '';
@@ -112,7 +112,7 @@ function desencriptar() {
                 } else {
                     resultado += caracteresPermitidos.charAt(indiceCaracter);
                 }
-            } 
+            }
             document.querySelector('#resultadoDesencriptar').innerHTML = resultado;
             document.querySelector('#desencriptar .copiar').classList.add("visible");
         }
