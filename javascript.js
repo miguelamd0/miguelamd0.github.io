@@ -1,5 +1,36 @@
 // let caracteresPermitidos = ".:-_,;`=¿+-/*1!¡\\'\"$%&()ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-let caracteresPermitidos = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+let caracteresPermitidos = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789.";
+
+function rotarTexto(texto, cantidad) {
+    let caracteres = texto.split("");
+    for (let i = 0; i < cantidad; i++) {
+        caracteres.unshift(caracteres.pop());
+    }
+    return caracteres.join("");
+}
+
+function rotarTextoInverso(texto, cantidad) {
+    let longitud = texto.length;
+    let textoRotado = [];
+    for (let i = 0; i < longitud; i++) {
+        let posicion = (i + cantidad) % longitud;
+        textoRotado.push(texto[posicion]);
+    }
+    return textoRotado.join("");
+}
+
+function calcularResto(palabra1, palabra2) {
+    let long1 = palabra1.length;
+    let long2 = palabra2.length;
+    let numCrypt = parseInt(Math.abs(Math.sin(long1 + long2)) * 100);
+
+    if (long2 == 0) return numCrypt;
+    if (long1 == long2) return long1 + numCrypt;
+    if (long1 < long2) return (long2 % long1) + numCrypt;
+
+    let resto = long1 % long2;
+    return (resto == 0 ? (Math.max(long1, long2) + numCrypt) : resto + numCrypt);
+}
 
 function generarTablaConversion(claveSecreta) {
     let clave = claveSecreta.repeat(Math.ceil(caracteresPermitidos.length / claveSecreta.length)).slice(0, caracteresPermitidos.length);
@@ -39,6 +70,9 @@ function encriptar() {
                     resultado += tablaConversion.charAt(indiceCaracter);
                 }
             }
+            let cantidad = calcularResto(palabraInput, claveInput);
+            resultado = rotarTexto(resultado, cantidad);   
+
             document.querySelector('#resultadoEncriptar').innerHTML = resultado;
             document.querySelector('#encriptar .copiar').classList.add("visible");
         }
@@ -65,6 +99,9 @@ function desencriptar() {
             document.querySelector('#resultadoDesencriptar').innerHTML = '<span style="color: #ff9696; font-size: 16px;">La clave no coincide</span>';
 
         } else if (palabraEncriptada == palabraEncriptadaRepite && claveInput == claveInputRepite) {
+            let cantidad = calcularResto(palabraEncriptada, claveInput);
+            palabraEncriptada = rotarTextoInverso(palabraEncriptada, cantidad); 
+
             let tablaConversion = generarTablaConversion(claveInput);
             let resultado = '';
             for (let i = 0; i < palabraEncriptada.length; i++) {
@@ -75,7 +112,7 @@ function desencriptar() {
                 } else {
                     resultado += caracteresPermitidos.charAt(indiceCaracter);
                 }
-            }
+            } 
             document.querySelector('#resultadoDesencriptar').innerHTML = resultado;
             document.querySelector('#desencriptar .copiar').classList.add("visible");
         }

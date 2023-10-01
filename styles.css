@@ -34,7 +34,7 @@ input:focus {
     background: #3a3a3a;
     padding: 15px 20px 20px 20px;
     margin-bottom: 20px;
-    max-width: 650px;
+    max-width: 550px;
     width: 100%;
     position: relative;
 }
@@ -71,6 +71,7 @@ input:focus {
     margin-bottom: 15px;
     width: 100%;
     max-width: 300px;
+    background: #f3f3f3;
 }
 
 #encriptar #palabraEncriptarRepite,
