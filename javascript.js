@@ -51,7 +51,7 @@ function encriptar() {
     let claveInput = document.getElementById("claveEncriptar").value.trim();
     let claveInputRepite = document.getElementById("claveEncriptarRepite").value.trim();
 
-    if (palabraInput.length > 0 && palabraInputRepite.length > 0 && claveInput.length && claveInputRepite.length) {
+    if (palabraInput.length > 0 && palabraInputRepite.length > 0 && claveInput.length > 0 && claveInputRepite.length > 0) {
         if (palabraInput != palabraInputRepite) {
             document.querySelector('#resultadoEncriptar').innerHTML = '<span style="color: #ff9696; font-size: 16px;">El texto a encriptar no coincide</span>';
 
@@ -91,7 +91,7 @@ function desencriptar() {
     let claveInput = document.getElementById("claveDesencriptar").value.trim();
     let claveInputRepite = document.getElementById("claveDesencriptarRepite").value.trim();
 
-    if (palabraEncriptada.length > 0 && palabraEncriptadaRepite.length > 0 && claveInput.length && claveInputRepite.length) {
+    if (palabraEncriptada.length > 0 && palabraEncriptadaRepite.length > 0 && claveInput.length > 0 && claveInputRepite.length > 0) {
         if (palabraEncriptada != palabraEncriptadaRepite) {
             document.querySelector('#resultadoDesencriptar').innerHTML = '<span style="color: #ff9696; font-size: 16px;">El texto encriptado no coincide</span>';
 
