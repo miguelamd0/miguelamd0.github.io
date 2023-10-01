@@ -131,3 +131,50 @@ function copiarTexto(id, event) {
     target.classList.add("activo");
     setTimeout(() => target.classList.remove("activo"), 1000);
 }
+
+
+// EN SERIE
+function encriptarEnSerie(palabraInput, claveInput) {
+    let palabraInputRepite = palabraInput.trim();
+    let claveInputRepite = claveInput.trim();
+
+    if (palabraInput.length > 0 && palabraInputRepite.length > 0 && claveInput.length > 0 && claveInputRepite.length > 0) {
+        let tablaConversion = generarTablaConversion(claveInput);
+        let resultado = '';
+        for (let i = 0; i < palabraInput.length; i++) {
+            let caracter = palabraInput.charAt(i);
+            let indiceCaracter = caracteresPermitidos.indexOf(caracter);
+            if (indiceCaracter === -1) {
+                resultado += caracter; // Conservar caracteres no encontrados en la tabla
+            } else {
+                resultado += tablaConversion.charAt(indiceCaracter);
+            }
+        }
+        let cantidad = calcularResto(palabraInput, claveInput);
+        resultado = rotarTexto(resultado, cantidad);
+        return resultado;
+    }
+}
+
+function desencriptarEnSerie(palabraEncriptada, claveInput) {
+    let palabraEncriptadaRepite = palabraEncriptada.trim();
+    let claveInputRepite = claveInput.trim();
+
+    if (palabraEncriptada.length > 0 && palabraEncriptadaRepite.length > 0 && claveInput.length > 0 && claveInputRepite.length > 0) {
+        let cantidad = calcularResto(palabraEncriptada, claveInput);
+        palabraEncriptada = rotarTextoInverso(palabraEncriptada, cantidad);
+
+        let tablaConversion = generarTablaConversion(claveInput);
+        let resultado = '';
+        for (let i = 0; i < palabraEncriptada.length; i++) {
+            let caracterEncriptado = palabraEncriptada.charAt(i);
+            let indiceCaracter = tablaConversion.indexOf(caracterEncriptado);
+            if (indiceCaracter === -1) {
+                resultado += caracterEncriptado; // Conservar caracteres no encontrados en la tabla
+            } else {
+                resultado += caracteresPermitidos.charAt(indiceCaracter);
+            }
+        }
+        return resultado;
+    }
+}
