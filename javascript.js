@@ -135,10 +135,7 @@ function copiarTexto(id, event) {
 
 // EN SERIE
 function encriptarEnSerie(palabraInput, claveInput) {
-    let palabraInputRepite = palabraInput.trim();
-    let claveInputRepite = claveInput.trim();
-
-    if (palabraInput.length > 0 && palabraInputRepite.length > 0 && claveInput.length > 0 && claveInputRepite.length > 0) {
+    if (palabraInput.length > 0 && claveInput.length > 0) {
         let tablaConversion = generarTablaConversion(claveInput);
         let resultado = '';
         for (let i = 0; i < palabraInput.length; i++) {
@@ -157,10 +154,7 @@ function encriptarEnSerie(palabraInput, claveInput) {
 }
 
 function desencriptarEnSerie(palabraEncriptada, claveInput) {
-    let palabraEncriptadaRepite = palabraEncriptada.trim();
-    let claveInputRepite = claveInput.trim();
-
-    if (palabraEncriptada.length > 0 && palabraEncriptadaRepite.length > 0 && claveInput.length > 0 && claveInputRepite.length > 0) {
+    if (palabraEncriptada.length > 0 && claveInput.length > 0) {
         let cantidad = calcularResto(palabraEncriptada, claveInput);
         palabraEncriptada = rotarTextoInverso(palabraEncriptada, cantidad);
 
