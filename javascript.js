@@ -1,5 +1,5 @@
 // let caracteresPermitidos = ".:-_,;`=¿+-/*1!¡\\'\"$%&()ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-let caracteresPermitidos = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789.";
+let caracteresPermitidos = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789. ";
 
 function rotarTexto(texto, cantidad) {
     let caracteres = texto.split("");
